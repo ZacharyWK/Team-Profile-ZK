@@ -1,0 +1,17 @@
+{
+  "name": "team-profile-zk",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  }
+}
