@@ -55,28 +55,44 @@ default:"000",
 
 ])
 .then(answers => {
-    const manager = new Manager(answers.m_name, answers.m_email, answers.m_id, answers.officeNumber);
-    employees.push(manager);
+const manager = new Manager(answers.m_name, answers.m_email, answers.m_id, answers.officeNumber);
+employees.push(manager);
 
-    nextOrDone();
+nextOrDone();
 
 })    
 }
 
 function nextOrDone() {
-    inquirer.prompt([
-        {
-            type:"list",
-            name: "nextOrDone",
-            message: "What would you like to do next?",
-            choices: ["Add Intern","Add Engineer","Make HTML"]
-            },
-        ])
-        .then(answers => {
-            if(answers.nextOrDone === "Add Intern"){makeIntern()}
-            else if(answers.nextOrDone === "Add Engineer"){makeEngineer()}
-            else(makeHTML())
-        })
+inquirer.prompt([
+
+{
+type:"list",
+name: "nextOrDone",
+message: "What would you like to do next?",
+choices: ["Add Intern","Add Engineer","Make HTML"]
+},
+
+])
+.then
+(answers => {
+if(answers.nextOrDone === "Add Intern"){makeIntern()}
+else if(answers.nextOrDone === "Add Engineer"){makeEngineer()}
+else(makeHTML())
+})
+
 }
 
+
+function makeIntern() {
+
+}
+
+function makeEngineer() {
+    
+}
+
+function makeHTML() {
+    
+}
 //loop in emp arr if else loop to check role and make card for each in HTML
