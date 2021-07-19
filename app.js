@@ -197,7 +197,8 @@ let templateStart =
     <title>Team Builder</title>
 </head>
 <body>
-    <div class="jumbotron"><h1 class="display-4">Business Place CO.</h1></div>
+    <div class="jumbotron">
+    <h1 class="display-4">Business Place CO.</h1>
     <main>
     <hr class="my-4">
     <h2>Our Team!</h2>
@@ -211,16 +212,17 @@ for (let index = 0; index < employee.length; index++) {
         <h3 class="h3 card-title">Employee: ${employee[index].name}</h3>
         <h3 class="h3 card-text">Employee ID: ${employee[index].id}</h3>
         <h3 class="h3 card-text">Position: ${employee[index].getRole()}</h3>
-        <h3 class="h3 card-text">Email: ${employee[index].email}</h3>`
+        <h3 class="h3 card-text">Email: <a href="mailto:${employee[index].email}">${employee[index].email}</a></h3>`
         if (employee[index].getRole() === "Manager"){templateCard+=`<h3 class="h3 card-text">Office Number: ${employee[index].officeNumber}</h3>`}
         else if (employee[index].getRole() === "Intern"){templateCard+=`<h3 class="h3 card-text">School: ${employee[index].school}</h3>`}
-        else {templateCard+=`<h3 class="h3 card-text">GitHub Account: ${employee[index].gitHub}</h3>`}
+        else {templateCard+=`<h3 class="h3 card-text">GitHub Account: <a href="https://github.com/${employee[index].gitHub}" target="_blank">${employee[index].gitHub}</a></h3>`}
     templateCard+=`</div>`
     templateArray.push(templateCard);    
 }
 
 let templateEnd =
 `</div>
+</div>
 </main>
 </body>
 </html>`
